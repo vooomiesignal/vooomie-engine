@@ -1049,7 +1049,7 @@ def post_to_facebook(content, post_url, image_url=None):
         if image_url:
             log.info(f"  [FB] Posting with image: {image_url[:60]}")
             res = requests.post(
-                f"https://graph.facebook.com/v19.0/{FACEBOOK_PAGE_ID}/photos",
+                f"https://graph.facebook.com/v21.0/{FACEBOOK_PAGE_ID}/photos",
                 data={
                     "url":          image_url,
                     "message":      message,
@@ -1060,7 +1060,7 @@ def post_to_facebook(content, post_url, image_url=None):
         else:
             log.info(f"  [FB] Posting link to feed")
             res = requests.post(
-                f"https://graph.facebook.com/v19.0/{FACEBOOK_PAGE_ID}/feed",
+                f"https://graph.facebook.com/v21.0/{FACEBOOK_PAGE_ID}/feed",
                 data={
                     "message":      message,
                     "link":         post_url,
@@ -1210,8 +1210,8 @@ def inject_adsense_snippet():
     """
     return """
 <!-- VOOOMIE AdSense Auto Ads -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-<!-- Replace ca-pub-XXXXXXXXXXXXXXXXX with your actual AdSense publisher ID -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7829162466018008" crossorigin="anonymous"></script>
+<!-- Replace ca-pub-7829162466018008 with your actual AdSense publisher ID -->
 """
 
 def print_monetization_report():
